@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FountainJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+
+    <!-- build:css({.tmp,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,src}) styles/app.css -->
+    <link rel=“stylesheet” href=“https://www.nespresso.com/mosaic/_ui/generated/all.css“>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css"/>
+    <!-- endbuild -->
+  </head>
+
+
+    <body>
+
+    <div class="pp_page_wrapper ng-cloak" ng-app="App" ng-controller="Ctrl as App" ng-cloak>
+
+        <section id="theheader" class="video_wrapper" style="background-image: url('https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/header_background_parallax_alt_new.jpg')">
+            <iframe id="iframe" tabindex="-1" aria-hidden="true" loop="1" autoplay="1" frameborder="0" gesture="media" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/WpgmD83fyz4?rel=0&fs=0&autoplay=1&loop=1&enablejsapi=1&origin=https%3A%2F%2Fwww.nespresso.com&widgetid=1&playlist=WpgmD83fyz4"></iframe>
+            <div class="black_shadow"></div>
+            <div class="header_movie_text">
+                <div class="container">
+                    <div class="thesentences"  data-aos="fade" data-aos-delay="0" data-aos-once="true">
+                        <h1 ng-bind-html="App.copy.theheader.title"></h1>
+                        <p ng-bind-html="App.copy.theheader.text"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thetabs">
+            <div class="container">
+                <div class="thetabs_intro">
+                    <h2 ng-bind-html="App.copy.thetabs.title"></h2>
+                    <p ng-bind-html="App.copy.thetabs.text"></p>
+                </div>
+                <div class="tabs">
+                    <div class="tab" id="tab_one">
+                        <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked=""  ng-click="App.tabClick(1)">
+                        <label class="tab-label" for="tab-1">
+                            <img src="https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/gift.svg" alt="gift">
+                            <p ng-bind-html="App.copy.thetabs.tab[0].title"></p>
+<!--                             <a class="info" ng-click="App.openPopUp('cube', App.copy.thetabs.tab[0].cube, $event)">
+                                <i class="fa fa-info" aria-hidden="true"></i>
+                            </a> -->
+                        </label>
+                        <div class="tab-panel">
+                            <div class="tab-content">
+                                <div class="row row_padding">
+                                    <div class="col-m-8">
+                                        <div class="row packages">
+                                            <div class="col-m-4" ng-repeat="package in App.packagesTabA">
+                                                <div class="tab_item track-impression-product" 
+                                                     data-product-item-id="{{package.sku}}"
+                                                     data-product-section="Tab 150 capsules"
+                                                     data-product-position="{{$index}}"
+                                                     data-aos="fade-up"     
+                                                     data-aos-delay="{{$index * 50}}" 
+                                                     data-aos-once="true">
+                                                    <div class="tab_item_visual">
+                                                        <img ng-src="{{package.image}}" src="" alt="{{package.name_prospect}}">
+                                                    </div>
+                                                    <div class="tab_item_details">
+                                                        <div class="tab_item_name">
+                                                            <p>{{package.name_prospect}}</p>
+                                                            <a class="info" ng-click="App.openPopUp('package', package, $event)">
+                                                                <!-- <i class="fa fa-info" aria-hidden="true"></i> -->
+                                                                <span>i</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="tab_item_price">
+                                                            <p>&euro; {{package.price | number:2}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab_item_button">
+                                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{package.sku}}" data-product-name="{{package.name_prospect}}"  data-product-price="{{package.price}}" data-product-qnt="150" data-min="0" data-step="1" data-max="10" data-orientation="right" data-use-custom-third-line="false" data-product-name="{{package.name_prospect}}" aria-disabled="false" data-defaultcontent="<img src=&quot;/mosaic/_ui/img/Elements/cross_plus.png&quot; alt=&quot;&quot; width=&quot;16&quot;>">
+                                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{package.sku}}"><img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16"></span>
+                                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-m-4 thecube">
+                                          <div class="row" data-aos="zoom-in" data-aos-delay="300" data-aos-once="true">
+                                            <div class="thecube_container">
+                                                <div class="col-m-5">
+                                                    <div class="thecube_visual">
+                                                        <img ng-src="{{App.copy.thetabs.tab[0].cube.image}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-m-7">
+                                                    <div class="thecube_offert">
+                                                        <p class="ingold" ng-bind-html="App.copy.thetabs.tab[0].cube.title"></p>
+                                                        <p class="withpadding" ng-bind-html="App.copy.thetabs.tab[0].cube.subtitle"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="thecube_description" ng-bind-html="App.copy.thetabs.tab[0].cube.description"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab" id="tab_two">
+                        <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1" ng-click="App.tabClick(2)">
+                        <label class="tab-label" for="tab-2">
+                            <img src="https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/gift.svg" alt="gift">
+                            <p ng-bind-html="App.copy.thetabs.tab[1].title"></p>
+<!--                             <a class="info" ng-click="App.openPopUp('cube', App.copy.thetabs.tab[1].cube, $event)">
+                                <i class="fa fa-info" aria-hidden="true"></i>
+                            </a> -->
+                        </label>
+                        <div class="tab-panel">
+                            <div class="tab-content">
+                                <div class="row row_padding">
+                                    <div class="col-m-8">
+                                        <div class="row packages">
+                                            <div class="col-m-4" ng-repeat="package in App.packagesTabB">
+                                                <div class="tab_item track-impression-product" 
+                                                     data-product-item-id="{{package.sku}}"
+                                                     data-product-section="Tab 250 capsules"
+                                                     data-product-position="{{$index}}">
+                                                    <div class="tab_item_visual">
+                                                        <img ng-src="{{package.image}}" src="" alt="package.name_prospect">
+                                                    </div>
+                                                    <div class="tab_item_details">
+                                                        <div class="tab_item_name">
+                                                            <p>{{package.name_prospect}}</p>
+                                                            <a class="info" ng-click="App.openPopUp('package', package, $event)">
+                                                                <!-- <i class="fa fa-info" aria-hidden="true"></i> -->
+                                                                <span>i</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="tab_item_price">
+                                                            <p>&euro; {{package.price | number:2}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab_item_button">
+                                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{package.sku}}" data-product-name="{{package.name_prospect}}"  data-product-price="{{package.price}}" data-product-qnt="250" data-min="0" data-step="1" data-max="10" data-orientation="right" data-use-custom-third-line="false" data-product-name="{{package.name_prospect}}" aria-disabled="false" data-defaultcontent="<img src=&quot;/mosaic/_ui/img/Elements/cross_plus.png&quot; alt=&quot;&quot; width=&quot;16&quot;>">
+                                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{package.sku}}"><img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16"></span>
+                                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-m-4 thecube">
+                                        <div class="row" data-aos="zoom-in" data-aos-delay="300" data-aos-once="true">
+                                            <div class="thecube_container">
+                                                <div class="col-m-5">
+                                                    <div class="thecube_visual">
+                                                        <img ng-src="{{App.copy.thetabs.tab[1].cube.image}}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-m-7">
+                                                    <div class="thecube_offert">
+                                                        <p class="ingold" ng-bind-html="App.copy.thetabs.tab[1].cube.title"></p>
+                                                        <p class="withpadding" ng-bind-html="App.copy.thetabs.tab[1].cube.subtitle"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="thecube_description" ng-bind-html="App.copy.thetabs.tab[1].cube.description"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--         <section id="thechoice">
+            <div class="container">
+                <div class="thechoice_intro">
+                    <h2 ng-bind-html="App.copy.thechoice.title"></h2>
+                </div>
+                <div class="thechoice_control" data-aos="zoom-in-down" data-aos-offset="300" data-aos-delay="0" data-aos-once="true" ng-class="App.ready ? 'withline' : ''">
+                    <div class="row">
+                        <div class="col-m-4" ng-repeat="table in App.table">
+                            <div class="yourfavourite" data-aos="flip-up" data-aos-offset="300" data-aos-delay="0" data-aos-once="true" ng-class="App.ready ? 'withline' : ''">
+                                <div class="yourfavourite_title" href="#{{table.id}}">{{table.header}}</div>
+                                <div class="themagic" id="{{table.id}}">
+                                    <div class="yourfavourite_description">{{table.subtitle}}</div>
+                                    <div class="yourfavourite_container">
+
+                                        <div class="radio" ng-repeat="filter in table.filter">
+                                            <input id="{{filter.id}}" name="{{table.id}}" type="radio" value="{{filter.id}}" ng-model="App.value[table.id]" ng-click='App.newValue(App.value)'>
+                                            <label for="{{filter.id}}" class="radio-label">{{filter.name}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="yourfavourite_tick" ng-class="App.tick_{{table.id}} === true  ? 'active' : ''">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="theresult" ng-show="App.ready === true">
+            <div class="container">
+                <div class="theresult_container">
+                    <div class="theresult_intro">
+                        <p ng-bind-html="App.ready === true ? App.copy.theresult.title : App.copy.theresult.standby " ></p>
+                    </div>
+                    <div class="row" id="tohide">
+                        <div class="col-one-fifth" ng-repeat="capsule in App.capsulesCollection">
+
+                            <div class="tab_item"  data-aos="fade" data-aos-offset="100" data-aos-delay="0" data-aos-once="true">
+                                <div class="tab_item_visual">
+                                    <img ng-src="{{capsule.image}}" alt="" class="tab_item_visual tab_item_visual_capsule">
+                                    <div class="capsule_shadow"></div>
+                                </div>
+                                <div class="tab_item_details">
+                                    <div class="tab_item_name">
+                                        <p>{{capsule.name}}</p>
+                                        <a class="info" ng-click="App.openPopUp('capsule', capsule, $event)">
+                                            <i class="fa fa-info" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="tab_item_price">
+                                        <p>&euro; {{capsule.price | number:2}}</p>
+                                    </div>
+                                </div>
+                                <div class="tab_item_button">
+                                    <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-ng-class="{'disabled': !isItemActive(item)}" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="Barista chiaro" aria-disabled="false" data-defaultcontent="<img src=&quot;/mosaic/_ui/img/Elements/cross_plus.png&quot; alt=&quot;&quot; width=&quot;16&quot;>">
+                                        <span data-ng-if="isItemActive(item)" class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}"><img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16"></span>
+                                        <span data-ng-if="isItemActive(item)" class="visually-hidden ng-scope" tabindex="-1"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="toshow">
+                        <div id="thepointer">
+                            <div class="thumbs">
+                                <img class="thumb" ng-class="{'thumb-active': $index==0}" data-id="{{$index}}" ng-src="{{capsule.image}}" ng-repeat="capsule in App.capsulesCollection" ng-click="App.resultClick($event)">
+                            </div>
+                            <div class="row" ng-class="{'tabsthumbs': App.ready}">
+                                <div class="row tabsthumbs_single" ng-class="{'tab-active': $index==0}" data-tab-id="{{$index}}" id="dep1" style="border-color: {{capsule.main_color}};" ng-repeat="capsule in App.capsulesCollection">
+                                    <div class="row tab_item">
+                                        <div class="col-m-3 tab_item_visual">
+                                            <img ng-src="{{capsule.image}}" alt="" class="tab_item_visual_capsule">
+                                            <div class="capsule_shadow"></div>
+                                        </div>
+                                        <div class="col-m-7 tab_item_details">
+                                            <div class="tab_item_name">
+                                                <p>{{capsule.name}}</p>
+                                            </div>
+                                            <div class="tab_item_price">
+                                                <p>&euro; {{capsule.price | number:2}}</p>
+                                            </div>
+                                            <a class="tab_item_meer" ng-click="App.openPopUp('capsule', capsule, $event)">
+                                                Meer informatie
+                                            </a>
+                                        </div>
+                                        <div class="tab_item_button">
+                                            <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-ng-class="{'disabled': !isItemActive(item)}" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="Barista chiaro" aria-disabled="false" data-defaultcontent="<img src=&quot;/mosaic/_ui/img/Elements/cross_plus.png&quot; alt=&quot;&quot; width=&quot;16&quot;>">
+                                                <span data-ng-if="isItemActive(item)" class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}"><img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16"></span>
+                                                <span data-ng-if="isItemActive(item)" class="visually-hidden ng-scope" tabindex="-1"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ -->
+        <section id="thechoice_re">
+            <div class="container">
+                <div class="thechoice_intro_re">
+                    <h2 ng-bind-html="App.copy.thechoice_re.title"></h2>
+                </div>
+                <div class="thechoice_control_re" ng-class="App.dynamic_class" data-aos="zoom-in-down" data-aos-offset="300" data-aos-delay="0" data-aos-once="true">
+                    <div class="row">
+                        <div class="col-m-4 yourfavourite_re" ng-repeat="table in App.table_re" ng-class="{active : App.activeItem === table.id}">
+                            <div class="yourfavourite_re_container" data-aos="flip-up" data-aos-offset="300" data-aos-delay="0" data-aos-once="true">
+                                <div class="yourfavourite_title_re" href="#{{table.id}}" value="{{table.id}}" ng-click='App.setActive(table.id)' ng-class="{active : App.activeItem === table.id}">{{table.header}}</div>
+                                <div class="yourfavourite_tick_re"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="theresult_re" ng-show="App.ready_re === true">
+            <div class="container">
+                <div class="theresult_container">
+                    <div class="theresult_intro">
+                        <p ng-bind-html="App.ready_re === true ? App.copy.theresult_re.title : App.copy.theresult_re.standby " ></p>
+                    </div>
+
+                    <div class="category" ng-if="App.selected_filter_result.length" ng-repeat="category in App.selected_filter_result track by $index" >
+                        <div class="category_header">
+                            <div class="category_details">
+                                <p class="category_name">{{category.slug}}</p>
+                                <img class="category_icon" ng-src="{{category.icon}}" alt="">
+                                <p class="category_amount">{{category.amount}}</p>
+                            </div>
+                            <div class="category_line"></div>
+                        </div>
+
+                        <div class="row category_capsules" >
+                            <div class="col-one-8" ng-if="category.sequence.length" ng-repeat="capsule in category.sequence track by $index">
+
+                                <div class="tab_item"  data-aos="fade" data-aos-offset="100" data-aos-delay="0" data-aos-once="true">
+                                    <div class="tab_item_visual">
+                                        <img ng-src="{{capsule.image}}" alt="" class="tab_item_visual tab_item_visual_capsule">
+<!--                                         <div class="capsule_shadow"></div> -->
+                                    </div>
+                                    <div class="tab_item_details">
+                                        <div class="tab_item_name">
+                                            <p>{{capsule.name}}</p>
+                                            <div class="infocontainer">
+                                                <a class="info" ng-click="App.openPopUp('capsule', capsule, $event)">
+                                                    <!-- <i class="fa fa-info" aria-hidden="true"></i> -->
+                                                    <span>i</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="tab_item_price">
+                                            <p>&euro; {{capsule.price | number:2}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab_item_button">
+                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="{{capsule.name}}" data-product-price="{{capsule.price}}" aria-disabled="false" data-defaultcontent="<img src=&quot;/mosaic/_ui/img/Elements/cross_plus.png&quot; alt=&quot;&quot; width=&quot;16&quot;>">
+                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}"></span>
+                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                        </button>
+                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="{{capsule.name}}" data-product-price="{{capsule.price}}" aria-disabled="false">
+                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}">
+                                                <img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16">
+                                            </span>
+                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                        </button>
+                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="{{capsule.name}}" data-product-price="{{capsule.price}}" aria-disabled="false" data-defaultcontent="">
+                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}">
+                                                <img src="/mosaic/_ui/img/Elements/cross_plus.png" alt="" width="16">
+                                            </span>
+                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                        </button>
+                                        <button type="button" class="button-primary add-to-cart small-button-green smallbtn special-small" data-product-id="{{capsule.sku}}" data-min="0" data-step="10" data-max="9990" data-orientation="right" data-use-custom-third-line="true" data-product-name="{{capsule.name}}" data-product-price="{{capsule.price}}" aria-disabled="false" data-defaultcontent="">
+                                            <span class="quantity ng-scope" aria-hidden="true" data-product-id="{{capsule.sku}}"></span>
+                                            <span class="visually-hidden ng-scope" tabindex="-1"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thearticles" >
+            <div class="container" >
+                <div class="row">
+                    <div class="col-m-4 card" data-aos="flip-left" data-aos-delay="0" data-aos-once="true">
+                        <div class="card_visual" ng-style="{'background-image':'url('+ App.copy.thearticles[0].image +')'}"></div>
+                        <div class="card_details">
+                            <div class="card_title"><h2 ng-bind-html="App.copy.thearticles[0].title"></h2></div>
+                            <div class="card_description"><p ng-bind-html="App.copy.thearticles[0].description"></p>
+                            </div>
+                        </div>
+                        <a class="button" data-popup-open="popup-1" ng-click="App.cardClick('All coffees')">{{App.copy.general.button}}</a>
+                    </div>
+                    <div class="col-m-4 card" data-aos="flip-left" data-aos-delay="150" data-aos-once="true">
+                        <div class="card_visual" ng-style="{'background-image':'url('+ App.copy.thearticles[1].image +')'}"></div>
+                        <div class="card_details">
+                            <div class="card_title"><h2 ng-bind-html="App.copy.thearticles[1].title"></h2></div>
+                            <div class="card_description"><p ng-bind-html="App.copy.thearticles[1].description"></p>
+                            </div>
+                        </div>
+                        <a class="button" data-popup-open="popup-1" ng-click="App.cardClick('Recycling')">{{App.copy.general.button}}</a>
+                    </div>
+                    <div class="col-m-4 card" data-aos="flip-left" data-aos-delay="300" data-aos-once="true">
+                        <div class="card_visual" ng-style="{'background-image':'url('+ App.copy.thearticles[2].image +')'}"></div>
+                        <div class="card_details">
+                            <div class="card_title"><h2 ng-bind-html="App.copy.thearticles[2].title"></h2></div>
+                            <div class="card_description"><p ng-bind-html="App.copy.thearticles[2].description"></p>
+                            </div>
+                        </div>
+                        <a class="button" data-popup-open="popup-1" ng-click="App.cardClick('Service')">{{App.copy.general.button}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thefooter">
+            <div class="container">
+                <div class="thefooter_container">
+                    <div class="row tocenter">
+                        <div class="col-m-6" data-aos="fade-right" data-aos-delay="0" data-aos-once="true">
+                            <div class="thefooter_message">
+                                <p ng-bind-html="App.copy.thefooter.title"></p>
+                                <a class="button" ng-bind-html="App.copy.thefooter.button_text" ng-click="App.cardClick('Opt in')"></a>
+                            </div>
+                        </div>
+                        <div class="col-m-6" data-aos="fade-left" data-aos-delay="50" data-aos-once="true">
+                            <img class="responsive_app" ng-src="{{App.copy.thefooter.image}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="popup" data-popup="popup-1">
+            <div class="row popup_container" ng-class="App.popUpObject.type">
+                <div ng-class="App.popUpObject.type != 'aromaprofiel' ? 'col-m-3' : 'col-m-5' ">
+                    <div class="popup_visual" ng-class="App.popUpObject.type != 'aromaprofiel' ? 'popup_visual_all' : 'popup_visual_aromaprofiel' ">
+                        <img ng-src="{{App.popUpObject.image}}" src="" alt="{{App.popUpObject.name}}">
+                        <div class="capsule_shadow" ng-show="App.popUpObject.type == 'capsule'"></div>
+                    </div>
+                </div>
+                <div ng-class="App.popUpObject.type != 'aromaprofiel' ? 'col-m-9' : 'col-m-7' ">
+                    <h2>{{App.popUpObject.name}}</h2>
+                    <p class="popup_subtitle">{{App.popUpObject.title | capitalize}}</p>
+                    <p ng-show="App.popUpObject.price" class="popup_price">&euro; {{App.popUpObject.price | number:2}}</p>
+                    <p class="popup_description">{{App.popUpObject.description}}</p>
+<!--                     <a ng-show="App.popUpObject.more_info_link" href="{{App.popUpObject.more_info_link}}" class="popup_moreinfo">Meer informatie</a> -->
+
+                    <ul ng-show="App.capsuleInThePackage" class="row popup_capsules_container">
+                        <li class="col-m-6 onecapsule" ng-repeat="capsule in App.capsuleInThePackage">
+                            <img class="onecapsule_visual" ng-src="{{capsule.item.image}}" alt="">
+                            <p>{{capsule.quantity}}x {{capsule.item.name | capitalize}}</p>
+                        </li>
+                    </ul>
+                    <div ng-show="App.popUpObject.capacity_image" class="popup_strength">
+                        <img ng-src="{{App.popUpObject.capacity_image}}" alt="">
+                    </div>
+                    <div ng-show="App.popUpObject.intensity" class="popup_intensity">
+                        <p>{{App.popUpObject.intensity}}</p>
+                        <ul class="popup_intensity_dots">
+                            <li class="popup_intensity_dot" ng-repeat="n in [0,1,2,3,4,5,6,7,8,9,10,11,12]" ng-class="$index < App.popUpObject.intensity ? 'dot-active' : 'dot-inactive' "></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="popup-close" data-popup-close="popup-1"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+
+  <!-- build:js({.tmp,src}) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+  <!-- <script src="./main.js"></script> -->
+
+</html>
+

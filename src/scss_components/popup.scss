@@ -1,0 +1,176 @@
+/* ==========================================================================
+   PopUp
+   ========================================================================== */
+
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    z-index: 2;
+    /* Inner */
+    .popup_container {
+        max-width:750px;
+        width:90%;
+        padding:50px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        -webkit-transform:translate(-50%, -50%);
+        transform:translate(-50%, -50%);
+        box-shadow:0px 2px 6px rgba(0,0,0,1);
+        background:$white;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        .col-m-3{
+            width: calc((100% - 50*3px) / (12 / 3));
+        }
+        .col-m-9{
+            width: calc((100% - 50*0.33333px) / (12 / 9));
+        }
+        .col-m-5{
+            width: calc((100% - 50*1.4px) / (12 / 5));
+        }
+        .col-m-7{
+            width: calc((100% - 50*0.7142857143px) / (12 / 7));
+        }
+        .popup_visual{
+            &.popup_visual_all{
+                text-align: center;
+                img{
+                    width: 109px;
+                }
+                .capsule_shadow{
+                    // width: 109px;
+                    // width: 90%;
+                }
+            }
+        }
+        h2{
+            font: 300 15px/16px 'Trebuchet MS';
+            color: $black; 
+            text-transform: uppercase;
+        }
+        .popup_subtitle{
+            color: $grey_darkest;
+            margin-top: 5px;
+        }
+        .popup_price{
+            color: $green;
+            margin-top: 5px; 
+        }
+        .popup_description{
+            margin: 10px 0; 
+        }
+        .popup_moreinfo{
+            color: $gold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .popup_capsules_container{
+            // padding: 20px;
+            // border: 1px solid $grey; 
+            margin-top: 30px;
+            .onecapsule{
+                display: flex;
+                margin-bottom: 13px;
+                .onecapsule_visual{
+                    height: 20px; 
+                    margin-right: 10px; 
+                }
+            }
+        }
+        .popup_strength{
+            img{
+                height: 22px; 
+            }
+        }
+        .popup_intensity{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-top: 10px;
+            .popup_intensity_dots{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin-left: 5px;
+                .popup_intensity_dot{
+                    height: 5px;
+                    width: 5px;
+                    margin-right: 1px;
+                    &.dot-active{
+                        background-color: #767778;
+                    }
+                    &.dot-inactive{
+                        background-color: #c4c6c7;
+                    }
+                }
+            }
+        }
+        /* Close Button */
+        .popup-close {
+            width:30px;
+            height:30px;
+            display:inline-block;
+            position:absolute;
+            top:0px;
+            right:0px;
+            transition:ease 0.25s all;
+            -webkit-transform:translate(50%, -50%);
+            transform:translate(50%, -50%);
+            border-radius:1000px;
+            background:rgba(0,0,0,0.8);
+            font-family:Arial, Sans-Serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#fff;
+            &:hover {
+                -webkit-transform:translate(50%, -50%) rotate(180deg);
+                transform:translate(50%, -50%) rotate(180deg);
+                background:rgba(0,0,0,1);
+                text-decoration:none;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 550px){
+    
+    .popup {
+        .popup_container {
+            padding:25px;
+            .col-m-3, .col-m-9, .col-m-5, .col-m-7, .col-m-6{
+                width: 100%;
+                & + .col-m-3, & + .col-m-9, & + .col-m-5, & + .col-m-7{
+                    margin-top: 25px;
+                }
+            }
+            &.aromaprofiel{
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: reverse;
+                -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+                .col-m-7{
+                    margin-top: 0;
+                }
+                .col-m-5{
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+
+}

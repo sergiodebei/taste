@@ -1,0 +1,9 @@
+.b-lazy {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 500ms;
+}
+.b-loaded {
+    opacity: 1;
+    transform: translateY(0px);
+}

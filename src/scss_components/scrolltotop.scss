@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Flying gotothetop arrow
+   ========================================================================== */
+
+.flying{
+    position: fixed;
+    bottom: 200px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    z-index: 98;
+    cursor: pointer; 
+    .cd {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right: 0px;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        color: $blue;
+        -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+        -moz-transition: opacity .3s 0s, visibility 0s .3s;
+        transition: opacity .3s 0s, visibility 0s .3s;
+        background-color: $grey;
+        z-index: 100;
+        @include transition(.3s);  
+    }
+    .cd__is-visible, .cd__fade-out, .cd__top:hover{
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s;
+    }
+    .cd__is-visible {
+        /* the button becomes visible */
+        visibility: visible;
+        opacity: .5;
+    }
+    .cd__fade-out {
+        /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+        opacity: .5;
+    }
+
+}

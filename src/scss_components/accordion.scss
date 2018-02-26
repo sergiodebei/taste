@@ -1,0 +1,50 @@
+.accordion {
+    .accordion-section{
+        // margin-bottom: 10px; 
+        .accordion-section-title {
+            cursor: pointer;
+            width:100%;
+            padding:20px 20px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: $white;
+            @include transition(.3s);
+            border-bottom: 5px solid transparent;
+            span{
+                line-height: initial;
+            }
+            &:after {
+                font-size: 11px;
+                // margin-top: 4px;
+                content: '';
+                display: inline-block;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                margin-left: 0.75em;
+                border-width: 0.4em 0 0.4em 0.7em;
+                border-color: transparent transparent transparent $tomato ;
+                @include transition(.3s);  
+                -ms-transform: rotate(90deg); /* IE 9 */
+                -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+                transform: rotate(90deg); 
+            }
+            &:hover, &.active{
+                border-bottom: 5px solid $tomato;       
+            }
+            &.active:after {
+                -ms-transform: rotate(-90deg); /* IE 9 */
+                -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+                transform: rotate(-90deg);
+            }
+        }
+        .accordion-section-content {
+            padding:20px;
+            display:none;
+            &.open{
+                background-color: $white; 
+            }
+        }
+    }
+}  

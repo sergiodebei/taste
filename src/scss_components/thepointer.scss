@@ -1,0 +1,115 @@
+
+#thepointer{
+    position: relative;
+    width: 100%;
+    .thumbs{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        .thumb{
+            cursor: pointer;
+            & + .thumb{
+                margin-left: 20px;
+            }
+        }
+        img{
+            height: 40px;
+            margin-bottom: 10px;
+        }
+    }
+    .tabsthumbs{
+        position: relative;
+        margin-top: 10px;
+        border: 1px solid $grey_darkest;
+        .tabsthumbs_single{
+            padding: 20px;
+            background-color: $white; 
+            opacity: 0; 
+            display: none;
+            position: relative;
+            width: 100%;
+            .tab_item{
+                text-align: initial;
+                width: 100%;
+                display: flex;
+                 flex-direction: row;
+                 justify-content: space-between;
+                 align-items: center;
+                 padding: 0;
+                 .tab_item_visual{
+                     .capsule_shadow{
+                         margin-bottom: 0;
+                     }
+                 }
+                 .tab_item_details{
+                     .tab_item_name{
+                         min-height: auto;
+                         justify-content: flex-start;
+                     }
+                 }
+            }
+            &.tab-active{
+                display: flex;
+                opacity: 1; 
+            }
+            & + .tabsthumbs_single{
+                margin-top: 0;
+            }
+            .tab_item_visual_capsule{
+                height: 58px;
+                width: 58px; 
+                display: block;
+                margin: auto;
+            }
+            .capsule_shadow{
+                width: 58px;
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            top: -10px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            @include transition(.3s);
+        }
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    
+    #thepointer{
+        .tabsthumbs{
+            .tabsthumbs_single{
+                .tab_item_visual_capsule{
+                    height: 40px;
+                    width: 40px; 
+                }
+                .capsule_shadow{
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+
+    #thepointer{
+        .thumbs{
+            .thumb{
+                & + .thumb{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+}

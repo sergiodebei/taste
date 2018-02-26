@@ -1,0 +1,32 @@
+.slider {
+    width: 100%;
+    height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    position: relative;
+    .slide {
+        width: 100vw;
+        height: 300px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .slick-dots{
+        left: 0; 
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    
+    .slick-prev {
+        left: 10px;
+        z-index: 1;
+    }
+    .slick-next {
+        right: 10px;
+        z-index: 1;
+    }
+
+}

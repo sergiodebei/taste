@@ -1,0 +1,321 @@
+label{
+    font: 300 14px/20px Merriweather;
+    color: $grey_text; 
+}
+
+.form{
+    background: $white;
+    width: 50%;
+    @include transition (.3s);
+    margin: 0 auto;
+    padding: 40px;
+    // box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    .form-header{
+        text-align: center;
+        padding-bottom: 40px;
+        h3{
+            & + p{
+                margin-top: 5px;
+            }
+        }
+    }
+    input, textarea {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        padding: 13px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 2px solid transparent; 
+        @include transition (.3s);
+        &:focus { 
+            color: $tomato; 
+            border: 2px solid $tomato; 
+        }
+    }
+    textarea {
+        resize: none;
+    }
+    button{
+        width: 100%;
+        margin: 0; 
+        &:hover,&:focus{
+            border: 2px solid $tomato; 
+        }
+    }
+    .vertical-form{
+        input, textarea{
+            margin: 0 0 10px;
+        }
+    }
+
+    .horizontal-form{
+        .hf_block{
+            display: flex;
+            align-items: center;
+            margin: 0 0 10px;
+            label{
+                text-align: left;
+                width: 30%;
+            }
+            span{
+                width: 70%; 
+            }
+        }
+    }
+
+    .hf_block_select{
+        .select-hidden {
+            display: none;
+            visibility: hidden;
+            padding-right: 10px;
+        }
+        .select {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            margin: 0 0 10px;
+            color: $tomato;
+            width: 100%; 
+        }
+        .select-styled {
+            background-color: $tomato;
+            color: $white; 
+            padding: 15px; 
+            @include transition(.3s);
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                border: solid $white;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 7px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                @include transition(.3s);
+            }
+            &:hover,&:active, &.active {
+                background-color: darken(tomato, 10%);
+                color: $white;
+                &:after{
+                    // border: solid $white;
+                    border: solid #ffffff;
+                    border-width: 0 2px 2px 0; 
+                }
+            } 
+            &:active, &.active{
+                &:after {
+                    // top: 9px;
+                    // border-color: transparent transparent $white transparent;
+                    transform: rotate(-135deg);
+                    -webkit-transform: rotate(-135deg);
+                    top: 18px;
+                }
+            }
+        }
+        .select-options {
+            display: none; 
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            z-index: 999;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: $white; 
+            background-color: lighten(tomato, 10%);
+            li {
+                margin: 0;
+                padding: 11px 0;
+                text-indent: 15px;
+                border-top: 1px solid darken(tomato, 10%);
+                @include transition(.3s);
+                &:hover {
+                    color: $tomato;
+                    background: $grey;
+                }
+                &[rel="hide"] {
+                    display: none;
+                }
+            }
+        }
+        &.hf_block_hor_select{
+            .select{
+                width: 70%;
+                margin: 0;  
+            }
+        }
+    }
+
+    .hf_block_radio{
+        cursor: pointer;
+        display: flex;
+        margin-bottom: 10px;
+        label{
+            cursor: pointer; 
+            color: $grey_text; 
+        }
+        .hf_block_radio_option{
+            width: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .label--radio {
+            text-align: center;
+            // margin: 8px 0 0 8px;
+            margin-left: 5px;
+            &:after {
+                content: '';
+                background: $white;
+                border-radius: 100%;
+                // border: 1px solid darken($grey, 25%);
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                // top: -0.2em;
+                // margin-right: 1em; 
+                vertical-align: top;
+                // cursor: pointer;
+                text-align: center;
+                @include transition (.3s);
+                background-color: $tomato;
+                box-shadow: inset 0 0 0 10px $white;
+            }
+        }
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0; 
+            // max-width: 130px; 
+            display: none; 
+            width: 20px;
+            height: 20px;
+            &:checked {
+                + .label--radio {
+                    &:after {
+                      // background-color: $tomato;
+                      box-shadow: inset 0 0 0 5px $white;
+                    }
+                }
+            }
+        }
+
+        &.hf_block_hor_radio{
+            .hf_block_radio_wrapper{
+                width: 70%; 
+                display: flex;
+                label{
+                    width: 50%; 
+                }
+            }
+        }
+    }
+
+    .hf_block_checkbox{
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 10px; 
+        text-align: center;
+        & > label{
+            padding-left: 20px;
+            position: relative;
+            display: inline-block;
+            &  > .box{
+                position: relative;
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background-color: #f2f2f2;
+                border-radius: 0px;
+                margin-right: 5px; 
+                bottom: -3px;
+                border: 2px solid $tomato;
+                & > .tick {
+                    position: absolute;
+                    left: 0px;
+                    top: 2px;
+                    width: 12px;
+                    height: 6px;
+                    border-bottom: 3px solid $tomato;
+                    border-left: 3px solid $tomato;
+                    -webkit-transform: rotate(-44deg);
+                    -moz-transform: rotate(-44deg);
+                    -o-transform: rotate(-44deg);
+                    -ms-transform: rotate(-44deg);
+                    transform: rotate(-44deg);
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition (.3s);
+                    /*  IF tick img  */
+                    /*background-repeat: no-repeat;*/
+                    /*background-image: url(); */
+                    /*background-size: cover;*/
+                }
+            }
+
+            & > input {
+                position: absolute;
+                outline: none;
+                opacity: 0;
+            }
+
+            & > input:checked + .box > .tick{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        .agree_link{
+            text-decoration: underline;
+        }
+    }
+    .hf_block_hor_checkbox{
+        .hf_block_checkbox{
+            label{
+                width: initial;
+                text-align: initial;
+            }
+        }
+    }
+
+    .newsletter-form{
+        display: flex;
+        input{
+            width: 70%; 
+        }
+        button{
+            width: 30%; 
+        }
+    }
+
+}
+
+@media only screen and (max-width: 777px) {
+
+    .form{
+        width: 80%;
+        padding: 20px; 
+        .form-header{
+            padding-bottom: 20px;
+        }
+    }
+  
+}
+
+@media only screen and (max-width: 444px) {
+
+    .form{
+        width: 100%;
+    }
+  
+}
+
+
+

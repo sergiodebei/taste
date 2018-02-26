@@ -1,0 +1,383 @@
+{
+    "theheader":
+    {
+        "title": "Welcome to <b>Nespresso</b>",
+        "text": "The coffee experience: from the berries we pick to the coffee you drink, we are dedicated to our share our expertise, knowledge and passion in every step of the process."
+    },
+    "thetabs":{
+        "title":"Explore our coffee with the discovery assortments",
+        "text":"We enjoy offering new customers something extra. Order your discovery assortment now and receive a cube or discovery box as a gift. This is just the beginning of a wide range of benefits and surprises at  <b>Nespresso</b>.",
+        "tab":[
+            {
+                "title":"<span>INTRODUCTORY PACKAGE</span> <span> <strong>150 capsules</strong></span>  <span> + FREE CUBE</span>", 
+                "info":"popup-1",
+                "packages":[100492,100491,100490],
+                "cube":
+                    {
+                        "name":"Cube",
+                        "image":"https://s3.eu-central-1.amazonaws.com/nespresso-cms/accessoires/cube.png",
+                        "title":"+ free",
+                        "subtitle":"view cube worth € 22",
+                        "description":"You will receive a free cube with an order of 150 capsules or more. "
+                    }
+            },
+            {
+                "title":"<span>INTRODUCTORY PACKAGE</span> <span><strong>250 capsules</strong></span> <span> + FREE DISCOVERY BOX</span>", 
+                "info":"popup-1",
+                "packages":[200492,200491,200490],
+                "cube":
+                    {
+                        "name":"INTRODUCTORY PACKAGE",
+                        "image":"https://s3.eu-central-1.amazonaws.com/nespresso-cms/accessoires/presentatiekist.png",
+                        "title":"+ free",
+                        "subtitle":"INTRODUCTORY PACKAGE worth € 42",
+                        "description":"We would love to help you discover the cup of coffee that suits you best."
+                    }
+            }
+        ]
+    },
+    "thechoice":{
+        "title":"We would love to help you discover the cup of coffee that suits you best.",
+        "table":[
+            {
+                "id":"intensiteit",
+                "header":"Intensiteit",
+                "subtitle":"Ik hou voornamelijk van:",
+                "filter":[
+                    {
+                        "id":"milde_koffie",
+                        "name": "Milde koffie"
+                    },{
+                        "id":"sterke_koffie",
+                        "name": "Sterke koffie"
+                    },{
+                        "id":"koffie_met_melk",
+                        "name": "Koffie met melk"
+                    },
+                    {
+                        "id":"geen_voorkeur",
+                        "name": "Geen voorkeur"
+                    }
+                ]
+            },
+            {
+                "id":"kopgrootte",
+                "header":"Kopgrootte",
+                "subtitle":"Mijn favoriete kopgrootte is:",
+                "filter":[
+                    {
+                        "id":"ristretto_25ml",
+                        "name": "Ristretto (25ml)"
+                    },{
+                        "id":"espresso_40ml",
+                        "name": "Espresso (40ml)"
+                    },{
+                        "id":"lungo_110ml",
+                        "name": "Lungo (110ml)"
+                    }
+                ]
+            },
+            {
+                "id":"aromaprofiel",
+                "info":true,
+                "header":"Aromaprofiel",
+                "subtitle":"Dit smaakprofiel spreekt mij aan:",
+                "filter":[
+                    {
+                        "id":"evenwichtig",
+                        "name": "Balanced",
+                        "description": "evenwichtig",
+                        "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/aromaprofiel/evenwichtig.jpg"
+                    },{
+                        "id":"bloem_en_fruitachtig",
+                        "name": "Floral and fruity",
+                        "description": "bloem_en_fruitachtig",
+                        "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/aromaprofiel/bloem_en_fruitachtig.jpg"
+                    },{
+                        "id":"intens",
+                        "name": "Intens",
+                        "description": "intens",
+                        "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/aromaprofiel/intens.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "theresult":{
+        "standby":"",
+        "title":"Selected for you:"
+    },
+    "thechoice_re":{
+        "title":"We would love to help you discover the cup of coffee that suits you best.",
+        "table":[
+            {
+                "id":"evenwichtig",
+                "header":"Balanced",
+                "cap_to_show":[
+                    {
+                        "id":"espresso",
+                        "slug":"espresso",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_02.svg",
+                        "amount":"40ml",
+                        "sequence":[7443.20,7413.20,7435.20,7645.20,7530.20]
+                    },
+                    {
+                        "id":"lungo",
+                        "slug":"lungo",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_03.svg",
+                        "amount":"110ml",
+                        "sequence":[7622.20]
+                    },
+                    {
+                        "id":"metmelk",
+                        "slug":"With Milk:",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_melk.svg",
+                        "amount":"",
+                        "sequence":[7443.20,7413.20,7435.20,7645.20,7530.20]
+                    }
+                ]
+            },
+            {
+                "id":"bloem_en_fruitachtig",
+                "header":"Floral and fruity",
+                "cap_to_show":[
+                    {
+                        "id":"espresso",
+                        "slug":"espresso",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_02.svg",
+                        "amount":"40ml",
+                        "sequence":[7515.20,7642.20,7633.20]
+                    },
+                    {
+                        "id":"lungo",
+                        "slug":"lungo",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_03.svg",
+                        "amount":"110ml",
+                        "sequence":[7810.20,7646.20]
+                    },
+                    {
+                        "id":"metmelk",
+                        "slug":"With Milk:",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_melk.svg",
+                        "amount":"",
+                        "sequence":[7515.20,7642.20,7633.20]
+                    }
+                ]
+
+            },
+            {
+                "id":"intens",
+                "header":"Intense",
+                "cap_to_show":[
+                    {
+                        "id":"ristretto",
+                        "slug":"ristretto",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_01.svg",
+                        "amount":"110ml",
+                        "sequence":[7623.20,7624.20,7704.20,7673.20,7510.20,7431.20,7644.20,7439.20]
+                    },
+                    {
+                        "id":"espresso",
+                        "slug":"espresso",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_02.svg",
+                        "amount":"40ml",
+                        "sequence":[7623.20,7624.20,7704.20,7673.20,7510.20,7431.20,7644.20,7439.20]
+                    },
+                    {
+                        "id":"lungo",
+                        "slug":"lungo",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_03.svg",
+                        "amount":"110ml",
+                        "sequence":[7654.20,7834.20]
+                    },
+                    {
+                        "id":"metmelk",
+                        "slug":"met melk",
+                        "icon_url":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/categories/kopjes_melk.svg",
+                        "amount":"",
+                        "sequence":[7623.20,7624.20,7704.20,7673.20,7510.20,7431.20,7644.20,7439.20]
+                    }
+                ]
+            }
+        ]
+    },
+    "theresult_re":{
+        "standby":"",
+        "title":"Selected for you:"
+    },
+    "thearticles":[
+        {
+            "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/article1.jpg",
+            "title":"Coffee for you",
+            "description":"With our range of 24 coffees there is blend for everyone, at every moment of the day.",
+            "link":""
+        },
+        {
+            "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/article2.jpg",
+            "title":"Recycle with us",
+            "description":"Easily recycle your capsules with the free recycling bag. You can hand in the bag wherever you receive your capsules.",
+            "link":""
+        },
+        {
+            "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/article3.jpg",
+            "title":"Service for your machine",
+            "description":"Register your machine and take advantage of all the benefits, such as technical support and service during maintenance. ",
+            "link":""
+        }
+    ],
+    "thefooter":{
+        "title":"ALWAYS BE UP-TO-DATE WITH RESPECT TO THE LATEST NEWS AND EXCLUSIVE PROMOTIONS?",
+        "button_text":"I WANT TO STAY UP-TO-DATE",
+        "button_link":"",
+        "image":"https://s3.eu-central-1.amazonaws.com/dev-nes-b2c-974-prospectpage/img/responsive_app.png"
+    },
+    "general":{
+        "button":"DISCOVER MORE"
+    },
+    "combination":[
+        {
+            "sequence":["milde_koffie","ristretto_25ml","evenwichtig"],
+            "cap_to_show":[7530.20,7435.20,7645.20]
+        },
+        {
+            "sequence":["milde_koffie","ristretto_25ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7642.20]
+        },
+        {
+            "sequence":["milde_koffie","ristretto_25ml","intens"],
+            "cap_to_show":[7624.20,7439.20,7431.20,7644.20]
+        },
+        {
+            "sequence":["milde_koffie","espresso_40ml","evenwichtig"],
+            "cap_to_show":[7413.20,7530.20,7443.20,7435.20,7645.20]
+        },
+        {
+            "sequence":["milde_koffie","espresso_40ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7642.20]
+        },
+        {
+            "sequence":["milde_koffie","espresso_40ml","intens"],
+            "cap_to_show":[7624.20,7439.20,7431.20,7644.20]
+        },
+        {
+            "sequence":["milde_koffie","lungo_110ml","evenwichtig"],
+            "cap_to_show":[7622.20]
+        },
+        {
+            "sequence":["milde_koffie","lungo_110ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7810.20,7646.20,7633.20]
+        },
+        {
+            "sequence":["milde_koffie","lungo_110ml","intens"],
+            "cap_to_show":[7834.20]
+        },
+        {
+            "sequence":["sterke_koffie","ristretto_25ml","evenwichtig"],
+            "cap_to_show":[7413.20,7443.20]
+        },
+        {
+            "sequence":["sterke_koffie","ristretto_25ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7515.20]
+        },
+        {
+            "sequence":["sterke_koffie","ristretto_25ml","intens"],
+            "cap_to_show":[7623.20,7510.20,7704.20,7673.20]
+        },
+        {
+            "sequence":["sterke_koffie","espresso_40ml","evenwichtig"],
+            "cap_to_show":[7413.20,7443.20]
+        },
+        {
+            "sequence":["sterke_koffie","espresso_40ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7515.20]
+        },
+        {
+            "sequence":["sterke_koffie","espresso_40ml","intens"],
+            "cap_to_show":[7623.20,7510.20,7704.20,7673.20]
+        },
+        {
+            "sequence":["sterke_koffie","lungo_110ml","evenwichtig"],
+            "cap_to_show":[7834.20,7622.20]
+        },
+        {
+            "sequence":["sterke_koffie","lungo_110ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7646.20, 7633.20]
+        },
+        {
+            "sequence":["sterke_koffie","lungo_110ml","intens"],
+            "cap_to_show":[7654.20,7834.20]
+        },
+        {
+            "sequence":["koffie_met_melk","ristretto_25ml","evenwichtig"],
+            "cap_to_show":[7443.20,7530.20,7435.20,7645.20,7413.20]
+        },
+        {
+            "sequence":["koffie_met_melk","ristretto_25ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7515.20,7642.20]
+        },
+        {
+            "sequence":["koffie_met_melk","ristretto_25ml","intens"],
+            "cap_to_show":[7624.20,7644.20,7644.20,7510.20,7673.20]
+        },
+        {
+            "sequence":["koffie_met_melk","espresso_40ml","evenwichtig"],
+            "cap_to_show":[7443.20,7530.20,7435.20,7645.20,7413.20]
+        },
+        {
+            "sequence":["koffie_met_melk","espresso_40ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7515.20,7642.20]
+        },
+        {
+            "sequence":["koffie_met_melk","espresso_40ml","intens"],
+            "cap_to_show":[7624.20,7644.20,7623.20,7510.20,7673.20]
+        },
+        {
+            "sequence":["koffie_met_melk","lungo_110ml","evenwichtig"],
+            "cap_to_show":[7622.20]
+        },
+        {
+            "sequence":["koffie_met_melk","lungo_110ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7633.20,7810.20,7646.20]
+        },
+        {
+            "sequence":["koffie_met_melk","lungo_110ml","intens"],
+            "cap_to_show":[7654.20,7834.20]
+        },
+        {
+            "sequence":["geen_voorkeur","ristretto_25ml","evenwichtig"],
+            "cap_to_show":[]
+        },
+        {
+            "sequence":["geen_voorkeur","ristretto_25ml","bloem_en_fruitachtig"],
+            "cap_to_show":[]
+        },
+        {
+            "sequence":["geen_voorkeur","ristretto_25ml","intens"],
+            "cap_to_show":[7623.20,7624.20,7673.20,7510.20,7431.20]
+        },
+        {
+            "sequence":["geen_voorkeur","espresso_40ml","evenwichtig"],
+            "cap_to_show":[7443.20,7413.20,7645.20,7530.20]
+        },
+        {
+            "sequence":["geen_voorkeur","espresso_40ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7515.20,7642.20]
+        },
+        {
+            "sequence":["geen_voorkeur","espresso_40ml","intens"],
+            "cap_to_show":[]
+        },
+        {
+            "sequence":["geen_voorkeur","lungo_110ml","evenwichtig"],
+            "cap_to_show":[7622.20]
+        },
+        {
+            "sequence":["geen_voorkeur","lungo_110ml","bloem_en_fruitachtig"],
+            "cap_to_show":[7810.20,7646.20,7633.20]
+        },
+        {
+            "sequence":["geen_voorkeur","lungo_110ml","intens"],
+            "cap_to_show":[7654.20,7834.20]
+        }
+    ]
+}

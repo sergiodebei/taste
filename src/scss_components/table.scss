@@ -1,0 +1,53 @@
+.table {
+    margin: 0 0 10px 0;
+    width: 50%;
+    @include transition (.3s);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: table;
+    background: $white;
+    margin: auto; 
+    .table-row {
+        display: table-row;
+        background: $white;
+        @include transition (.3s);
+        &:nth-of-type(odd) {
+            background: #f2f2f2;
+        }
+        &.header{
+            font-weight: bold;
+            color: $white;
+            background: $tomato;
+        }
+        .cell{
+            padding: 11px;
+            display: table-cell;
+        }
+        &:hover:not(.header), &:focus:not(.header),&.active:not(.header){
+            background: rgba(255,99,71,.4);
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (max-width: 777px) {
+    .table {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 444px) {
+    .table {
+        width: 100%; 
+        display: block;
+        .table-row {
+            padding: 8px 0;
+            display: block;
+            .cell {
+                padding: 2px 12px;
+                display: block;
+            }
+        }
+    }
+}
+
+
